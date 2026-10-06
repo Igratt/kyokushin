@@ -13,27 +13,28 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icons/*.png', 'assets/*.webp'],
+      includeAssets: ['assets/*.webp'],
+      // Kept deliberately identical in shape to the Trenkės manifest, which installs fine on the same phone:
+      // relative start_url/scope, icons at the root, no orientation/id. Icons are NOT precached so the
+      // browser and Google's WebAPK server always see the same bytes.
       manifest: {
         name: 'Kyokushin Training',
         short_name: 'Kyokushin',
         lang: 'lt',
-        description: '3 dienų Kyokushin sporto salės programa su treniruotės vedliu ir poilsio timeriu.',
-        id: BASE,
-        start_url: BASE,
-        scope: BASE,
+        description: '3 dienų Kyokushin sporto salės programa su treniruotės vedliu.',
+        start_url: './',
+        scope: './',
         display: 'standalone',
-        orientation: 'portrait',
         background_color: '#0B1020',
         theme_color: '#0B1020',
         icons: [
-          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
-          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,webp,png,svg,ico}'],
+        globPatterns: ['**/*.{js,css,html,webp,svg,ico}'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
