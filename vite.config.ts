@@ -14,6 +14,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['assets/*.webp'],
+      includeManifestIcons: false,
       // Kept deliberately identical in shape to the Trenkės manifest, which installs fine on the same phone:
       // relative start_url/scope, icons at the root, no orientation/id. Icons are NOT precached so the
       // browser and Google's WebAPK server always see the same bytes.
