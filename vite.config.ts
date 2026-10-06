@@ -2,9 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// base './' keeps every URL relative, so the build works from any folder or sub-path (GitHub Pages, Netlify, Vercel).
+// Deployed at https://igratt.github.io/kyokushin/ — the base and the manifest URLs are absolute on purpose:
+// Android's WebAPK installer is picky about relative start_url/scope. For another host change BASE (e.g. '/').
+const BASE = '/kyokushin/';
+
 export default defineConfig({
-  base: './',
+  base: BASE,
   build: { assetsDir: 'static' },
   plugins: [
     react(),
@@ -16,8 +19,9 @@ export default defineConfig({
         short_name: 'Kyokushin',
         lang: 'lt',
         description: '3 dienų Kyokushin sporto salės programa su treniruotės vedliu ir poilsio timeriu.',
-        start_url: './',
-        scope: './',
+        id: BASE,
+        start_url: BASE,
+        scope: BASE,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#0B1020',

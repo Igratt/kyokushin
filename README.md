@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Atsidaro adresas `http://localhost:5173`. Telefone tame pačiame Wi-Fi: `npm run dev -- --host` ir atidaryk rodomą `http://192.168.x.x:5173` adresą.
+Atsidaro adresas `http://localhost:5173/kyokushin/` (programa gyvena sub-kelyje `/kyokushin/`, kaip ir GitHub Pages). Telefone tame pačiame Wi-Fi: `npm run dev -- --host` ir atidaryk rodomą `http://192.168.x.x:5173/kyokushin/` adresą.
 
 ## Production build
 
