@@ -15,10 +15,14 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['assets/*.webp'],
       includeManifestIcons: false,
+      // A fresh app identity (manifest file name + id): the first Android install of this app got stuck
+      // half-way and every retry under the same identity failed, while the Trenkės PWA installs fine.
+      manifestFilename: 'kyokushin.webmanifest',
       // Kept deliberately identical in shape to the Trenkės manifest, which installs fine on the same phone:
-      // relative start_url/scope, icons at the root, no orientation/id. Icons are NOT precached so the
+      // relative start_url/scope, icons at the root, no orientation. Icons are NOT precached so the
       // browser and Google's WebAPK server always see the same bytes.
       manifest: {
+        id: 'kyokushin-training-2',
         name: 'Kyokushin Training',
         short_name: 'Kyokushin',
         lang: 'lt',
