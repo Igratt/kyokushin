@@ -4,6 +4,14 @@ Mobiliam telefonui skirta 3 dienų Kyokushin sporto salės programos programėl�
 
 Programa paimta iš `src/data/workout_data.json` (šaltinis: `Kyokushin_sporto_sales_programa.pdf`). Nuotraukos: `public/assets/A_1.webp … C_8.webp`.
 
+## Gyvas adresas
+
+https://igratt.github.io/kyokushin/ (GitHub Pages, šaka `gh-pages`). Atnaujinti po pakeitimų:
+
+```bash
+npm run deploy
+```
+
 ## Paleisti lokaliai
 
 Reikia Node.js 18+ (naudota 20).
